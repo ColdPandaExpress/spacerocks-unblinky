@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhyjlog2jgxtl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sti0i"]
+size = Vector2(46, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wovh"]
+size = Vector2(20, 54)
+
+[node name="Ship" type="Area2D"]
+
+[node name="WingsCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_sti0i")
+
+[node name="HullCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_3wovh")
