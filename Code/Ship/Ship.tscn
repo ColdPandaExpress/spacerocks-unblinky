@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhyjlog2jgxtl"]
+[gd_scene load_steps=4 format=3 uid="uid://bhyjlog2jgxtl"]
+
+[ext_resource type="Script" path="res://Ship/Ship.gd" id="1_fuhi0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sti0i"]
 size = Vector2(46, 22)
@@ -7,6 +9,7 @@ size = Vector2(46, 22)
 size = Vector2(20, 54)
 
 [node name="Ship" type="Area2D"]
+script = ExtResource("1_fuhi0")
 
 [node name="WingsCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)

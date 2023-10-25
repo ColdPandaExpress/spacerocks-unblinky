@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw58kshuekmna"]
+[gd_scene load_steps=4 format=3 uid="uid://dw58kshuekmna"]
+
+[ext_resource type="Script" path="res://Bullet/Bullet.gd" id="1_7q670"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjmhp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbn22"]
+size = Vector2(7, 49)
+
 [node name="Bullet" type="Area2D"]
+script = ExtResource("1_7q670")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mjmhp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 21.5)
+shape = SubResource("RectangleShape2D_sbn22")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
