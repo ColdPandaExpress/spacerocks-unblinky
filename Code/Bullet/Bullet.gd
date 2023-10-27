@@ -1,9 +1,9 @@
-extends Area2D
+extends ScreenWrapper
 class_name Bullet
 
 @onready var timer = $Timer
 
-var speed: float = 600 # Px / sec.
+var speed: float = 600 # px / sec.
 var direction: Vector2
 
 func _ready():
@@ -14,6 +14,10 @@ func OnTimedOut():
 	queue_free()
 
 
-#func _process(delta):
-#	direction = Vector2
-#	position += velocity * delta
+func _process(delta):
+	super._process(delta)
+	
+	var direction = Vector2(cos(rotation), -sin(rotation))
+	direction.y *= -1
+	position += direction * speed * delta
+

@@ -21,8 +21,8 @@ func _process(delta):
 	# Thrust.
 	if Input.is_action_pressed("thrust"):
 		print("Thrust")
-		var direction = Vector2(cos(rotation), -sin(rotation))
-		direction.y *= -1
+		var direction = Vector2(-cos(deg_to_rad(rotation_degrees + 90)), sin(deg_to_rad(rotation_degrees - 90)))
+#		direction.y *= -1
 		velocity += direction * thrust_power
 	
 	# Fire.
