@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhyjlog2jgxtl"]
+[gd_scene load_steps=5 format=3 uid="uid://bhyjlog2jgxtl"]
 
 [ext_resource type="Script" path="res://Ship/Ship.gd" id="1_fuhi0"]
+[ext_resource type="Texture2D" uid="uid://cgei2k8wrkb4y" path="res://Ship/assets/ship.png" id="2_bo0hr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sti0i"]
-size = Vector2(46, 22)
+size = Vector2(52, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wovh"]
-size = Vector2(20, 54)
+size = Vector2(44, 43)
 
 [node name="Ship" type="Area2D"]
 script = ExtResource("1_fuhi0")
@@ -16,5 +17,11 @@ position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_sti0i")
 
 [node name="HullCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -4.5)
 shape = SubResource("RectangleShape2D_3wovh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("2_bo0hr")
