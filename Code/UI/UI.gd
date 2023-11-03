@@ -1,17 +1,19 @@
 extends PanelContainer
 class_name UI
 
+const LIFE = preload("res://UI/assets/life.tscn")
+
 @onready var score_ui = $VBox/ScoreUI
 @onready var lives_list = $VBox/LivesList
-@onready var life = $VBox/LivesList/Life
 
 
 var score: int = 0
-var lives: int = 3
+var lives: int = 0
 
 
 func _ready():
-	UpdateLives(lives - 1)
+	UpdateLives(3)
+
 
 func UpdateScore(delta_score):
 	score += delta_score
@@ -19,9 +21,14 @@ func UpdateScore(delta_score):
 
 
 func UpdateLives(delta_lives):
-	for i in abs(delta_lives):
-		var dup = life.duplicate()
-		lives_list.add_child(dup)
-		
 	lives += delta_lives
-	print("LIVES: ", lives)
+	
+	if lives >= 0:
+		# Removing all children.
+		for child in lives_list.get_children():
+			lives_list.remove_child(child)
+			child.queue_free()
+		
+		# Adding the lives back. 
+		for i in lives:
+			lives_list.add_child(LIFE.instantiate())
