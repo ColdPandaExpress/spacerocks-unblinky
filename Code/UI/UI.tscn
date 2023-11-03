@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk4kqfbw4y3cb"]
+
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_gx5xa"]
+[ext_resource type="PackedScene" uid="uid://taq5bmmylvdg" path="res://UI/assets/life.tscn" id="2_ucpig"]
+
+[node name="UI" type="PanelContainer"]
+script = ExtResource("1_gx5xa")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScoreUI" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "1234567890"
+
+[node name="LivesList" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Life" parent="VBox/LivesList" instance=ExtResource("2_ucpig")]
+layout_mode = 2

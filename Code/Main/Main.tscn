@@ -9,7 +9,7 @@ script = ExtResource("1")
 [node name="Rocks" type="Node" parent="."]
 
 [node name="Rock" parent="Rocks" instance=ExtResource("2_n16ha")]
-position = Vector2(85, 344)
+position = Vector2(94, 345)
 
 [node name="Rock2" parent="Rocks" instance=ExtResource("2_n16ha")]
 position = Vector2(429, 520)
@@ -21,6 +21,17 @@ position = Vector2(85, 542)
 position = Vector2(402, 354)
 
 [node name="Rock5" parent="Rocks" instance=ExtResource("2_n16ha")]
-position = Vector2(227, 337)
+position = Vector2(259, 201)
 
 [node name="Bullets" type="Node" parent="."]
+
+[node name="Ships" type="Node" parent="."]
+
+[node name="MainData" type="PanelContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 62.0
+grow_horizontal = 2
+
+[node name="ShipList" type="HBoxContainer" parent="MainData"]
+layout_mode = 2

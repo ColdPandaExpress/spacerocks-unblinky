@@ -8,6 +8,7 @@ var main: Main = null
 var thrust_power: float = 10.0 #??
 var rotation_speed: float = 180 # ° / sec.
 var velocity: Vector2 # px / sec.
+var ui: UI
 
 
 func _process(delta):
@@ -33,5 +34,7 @@ func _process(delta):
 		bullet.position = position
 		bullet.rotation = rotation - NINTY_DEGREES
 		main.bullets.add_child(bullet)
+		ui.UpdateScore(1)
+		ui.UpdateLives(-1)
 	
 	position += velocity * delta
