@@ -3,8 +3,10 @@ class_name Bullet
 
 @onready var timer = $Timer
 
+var ship: Ship
 var speed: float = 600 # px / sec.
 var direction: Vector2
+
 
 func _ready():
 	timer.timeout.connect(OnTimedOut)

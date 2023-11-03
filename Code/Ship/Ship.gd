@@ -31,10 +31,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("fire"):
 		print("Fire")
 		var bullet = BULLET.instantiate()
+		bullet.ship = self
 		bullet.position = position
 		bullet.rotation = rotation - NINTY_DEGREES
 		main.bullets.add_child(bullet)
-		ui.UpdateScore(1)
-		ui.UpdateLives(-1)
 	
 	position += velocity * delta
+
